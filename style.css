@@ -16,6 +16,12 @@
 
 body {
     background: var(--background);
+    color: #111111;
+    line-height: 1.5;
+}
+
+main {
+    padding: 28px;
 }
 
 nav {
@@ -26,26 +32,52 @@ nav {
     justify-content: flex-end;
     gap: 10px;
     & a {
-        background-color: #f1f1f1;
         color: var(--muted);
         text-decoration: none;
         margin: 5px;
         padding: 10px;
-        border-radius: var(--radius);
-        align-items: center;
+        border-radius: 10px;
     }
     & a:first-of-type {
         margin-right: auto;
         &::before {
             display: inline-block;
             position: relative;
+            align-self: center;
+            justify-self: center;
             content: "";
-            padding: 0px;
-            background: url();
+            width: 24px;
+            height: 24px;
+            margin: -20px 20px 0 0;
+            background: url(/images/bioshieldlogo.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            justify-self: center;
         }
     }
     & a:hover,a:active {
-        background-color: #bbbbbb;
+        background-color: #f1f7fb;
         color: #111111;
+    }
+}
+
+.hero {
+    background: linear-gradient(180deg, rgba(14,165,233,.06), rgba(99,102,241,.03));
+    border-radius: var(--radius);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 28px;
+    text-align: center;
+    & h1 {
+        font-size: 34px;
+        margin: 0;
+        text-align: center;
+    }
+    & p {
+        color: var(--muted);
+        max-width: 600px;
     }
 }
