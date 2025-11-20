@@ -4,7 +4,7 @@
     --background: #f7fafc;
     --card: #ffffff;
     --muted: #6b7280;
-    --border-color: #cdb5e1;
+    --border-color: #cbd5e1;
     --radius: 16px;
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
@@ -12,6 +12,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -79,5 +80,46 @@ nav {
     & p {
         color: var(--muted);
         max-width: 600px;
+    }
+}
+
+#best-sellers {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.section-title {
+    text-align: center;
+}
+
+#best-products {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-card {
+    flex: 0 0 260px;
+    justify-self: center;
+    background: var(--card);
+    padding: 14;
+    border-radius: 12px;
+    border: 1px solid #eef3f7;
+    & figure {
+        height: 140px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #eef2ff, #f3f4f6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        overflow: hidden;
+        border: 3px solid var(--border-color);
+        img {
+            height: 100%;
+            width: 100%;
+            
+
+        }
     }
 }
