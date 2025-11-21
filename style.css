@@ -95,21 +95,29 @@ nav {
 
 #best-products {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 }
 
 .product-card {
-    flex: 0 0 260px;
+    flex: 0 0 300px;
     justify-self: center;
     background: var(--card);
-    padding: 14;
+    padding: 14px;
     border-radius: 12px;
     border: 1px solid #eef3f7;
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, auto) ;
+    grid-template-areas: "image image"
+                         "title price"
+                         ". cart";
     & figure {
+        grid-area: image;
         height: 140px;
+        width: 180px;
         border-radius: 16px;
         background: linear-gradient(135deg, #eef2ff, #f3f4f6);
         display: flex;
+        justify-self: center;
         align-items: center;
         justify-content: center;
         margin-bottom: 12px;
@@ -118,8 +126,23 @@ nav {
         img {
             height: 100%;
             width: 100%;
-            
-
         }
+    }
+    & p#product-name {
+        grid-area: title;
+    }
+    & p#product-price{
+        grid-area: price;
+        justify-self: flex-end;
+        align-self: center;
+    }
+    & button {
+        grid-area: cart;
+        grid-column: 2;
+        background: var(--accent);
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
     }
 }
