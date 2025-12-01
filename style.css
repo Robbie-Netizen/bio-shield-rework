@@ -22,7 +22,29 @@ body {
 }
 
 main {
-    padding: 28px;
+    padding: 0px;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+footer {
+    font-size: 14px;
+    color: var(--muted);
+    display: block;
+    & p {
+        padding: 5px;
+    }
 }
 
 nav {
@@ -37,7 +59,7 @@ nav {
         text-decoration: none;
         margin: 5px;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: var(--radius);
     }
     & a:first-of-type {
         margin-right: auto;
@@ -70,10 +92,9 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 28px;
+    margin: 30px;
     text-align: center;
     & h1 {
-        font-size: 34px;
         margin: 0;
         text-align: center;
     }
@@ -83,19 +104,61 @@ nav {
     }
 }
 
+#index-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 15px;
+    margin: 30px;
+    width: 80%;
+    & article {
+        background-color: var(--card);
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(8, 15, 26, 0.04);
+        border-radius: var(--radius);
+        overflow: hidden;
+        width: 80%;
+        & p {
+            color: var(--muted);
+        }
+    }
+    & #mission {
+        height: 200px;
+        &::after {
+            display: block;
+            content: url(images/employees.png);
+            width: 125px;
+            height: 160px;
+        }
+    }
+    & #featured {
+        height: 200px;
+        &::before {
+            display: block;
+            content: url(images/hero-img.png);
+            width: 125px;
+            height: 180px;
+        }
+    }
+}
+
 #best-sellers {
     display: flex;
     flex-direction: column;
-
+    justify-self: center;
+    width: 80%
 }
 
 .section-title {
-    text-align: center;
+    align-self: center;
 }
 
 #best-products {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 80%;
 }
 
 .product-card {
@@ -103,7 +166,7 @@ nav {
     justify-self: center;
     background: var(--card);
     padding: 14px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     border: 1px solid #eef3f7;
     display: grid;
     grid-template: repeat(3, auto) / repeat(2, auto) ;
@@ -114,7 +177,7 @@ nav {
         grid-area: image;
         height: 140px;
         width: 180px;
-        border-radius: 16px;
+        border-radius: var(--radius);
         background: linear-gradient(135deg, #eef2ff, #f3f4f6);
         display: flex;
         justify-self: center;
@@ -141,8 +204,9 @@ nav {
         grid-column: 2;
         background: var(--accent);
         color: white;
-        padding: 8px;
+        padding: 8px 10px;
         border-radius: 8px;
         border: none;
+        cursor: pointer;
     }
 }
