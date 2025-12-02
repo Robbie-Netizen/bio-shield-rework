@@ -42,6 +42,10 @@ footer {
     font-size: 14px;
     color: var(--muted);
     display: block;
+    justify-items: center;
+    & hr {
+        width: 100%
+    }
     & p {
         padding: 5px;
     }
@@ -104,9 +108,9 @@ nav {
     }
 }
 
-#index-content {
+.content-card {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     margin: 30px;
@@ -122,6 +126,9 @@ nav {
             color: var(--muted);
         }
     }
+}
+
+.content-card {
     & #mission {
         height: 200px;
         &::after {
