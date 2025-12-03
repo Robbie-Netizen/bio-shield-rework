@@ -220,16 +220,60 @@ nav {
     }
 }
 
-#values {
+#value {
     & article {
         justify-self: center;
     }
 }
 
+#values {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    & article {
+        width: 24%;
+        & * {
+            text-align: center;
+        }
+    }
+}
+
 #who-we-are {
     height: 200px;
+    &::after {
+        display: block;
+        content: url(/images/plant.avif);
+        width: 125px;
+        height: 160px;
+    }
 }
 
 #our-team {
     height: 200px;
+    &::before {
+        display: block;
+        content: url(/images/employees.png);
+        width: 125px;
+        height: 160px;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-flow: row wrap;
+    & section {
+    height: 75%;
+    }
+    & #message {
+        display: flex;
+        flex-direction: column;
+        & #contact-form {
+            display: grid;
+            grid-template: auto 1fr / repeat(auto, 4);
+        }
+    }
+    & #contact-info {
+
+    }
 }
