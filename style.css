@@ -16,6 +16,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background: var(--background);
     color: #111111;
     line-height: 1.5;
@@ -43,6 +45,8 @@ footer {
     color: var(--muted);
     display: block;
     justify-items: center;
+    justify-self: end;
+
     & hr {
         width: 100%
     }
@@ -116,7 +120,7 @@ nav {
     gap: 15px;
     margin: 30px;
     width: 90%;
-    & article {
+    & article,section {
         background-color: var(--card);
         padding: 20px;
         box-shadow: 0 6px 18px rgba(8, 15, 26, 0.04);
@@ -259,21 +263,52 @@ nav {
     }
 }
 
-.contact {
+#contact {
     display: flex;
     flex-flow: row wrap;
     & section {
     height: 75%;
+    width: 50%
     }
-    & #message {
+    & #message-card{
         display: flex;
-        flex-direction: column;
+        flex-flow: column nowrap;
         & #contact-form {
             display: grid;
-            grid-template: auto 1fr / repeat(auto, 4);
+            grid-template: repeat(auto, 4) / auto 1fr;
+            grid-template-areas: "name name-input"
+                                    "email email-input"
+                                    "message message-input"
+                                    "send send";
         }
+        & label[for="name"] {
+            grid-area: name;
+        }
+        & label[for="email"] {
+            grid-area: email;
+        }
+        & label[for="message"] {
+            grid-area: message;
+        }
+        & input[type="text"] {
+            grid-area: name-input;
+        }
+        & input[type="email"] {
+            grid-area: email-input;
+        }
+        & textarea {
+            grid-area: message-input;
+        }
+        & button {
+            grid-area: send;
+        }
+        
     }
     & #contact-info {
 
     }
+}
+
+#contact-info p {
+    color: var(--muted);
 }
