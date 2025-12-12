@@ -265,21 +265,31 @@ nav {
 
 #contact {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    align-self: center;
+    justify-self: center;
+    gap: 15px;
+    margin: 30px;
+    width: 80%;
     & section {
-    height: 75%;
-    width: 50%
+        background-color: var(--card);
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(8, 15, 26, 0.04);
+        border-radius: var(--radius);
+        overflow: hidden;
+        width: 50%;
     }
     & #message-card{
         display: flex;
         flex-flow: column nowrap;
         & #contact-form {
             display: grid;
-            grid-template: repeat(auto, 4) / auto 1fr;
-            grid-template-areas: "name name-input"
-                                    "email email-input"
-                                    "message message-input"
-                                    "send send";
+            grid-template: repeat(4, auto) / auto 1fr 1fr;
+            grid-template-areas: "name name-input ."
+                                    "email email-input ."
+                                    "message message-input ."
+                                    "send . .";
         }
         & label[for="name"] {
             grid-area: name;
@@ -290,17 +300,36 @@ nav {
         & label[for="message"] {
             grid-area: message;
         }
-        & input[type="text"] {
-            grid-area: name-input;
-        }
-        & input[type="email"] {
-            grid-area: email-input;
+        & input {
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            &[type="text"] {
+                grid-area: name-input;
+            }
+            &[type="email"] {
+                grid-area: email-input;
+            }
         }
         & textarea {
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 120px;
             grid-area: message-input;
         }
         & button {
             grid-area: send;
+            background: var(--accent);
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            &:hover {
+                background-color: var(--accent-hover);
+            }
         }
         
     }
